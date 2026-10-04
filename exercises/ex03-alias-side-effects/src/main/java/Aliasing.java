@@ -1,3 +1,4 @@
+import java.sql.Array;
 import java.util.Arrays;
 
 /**
@@ -40,6 +41,10 @@ public class Aliasing {
      */
     public static void addInPlace(int[] arr, int amount) {
         // TODO: complete
+        for(int i = 0; i < arr.length ; i++) {
+            arr[i] += amount;
+        }
+
     }
 
     /**
@@ -52,6 +57,11 @@ public class Aliasing {
      */
     public static int[] addCopy(int[] arr, int amount) {
         // TODO: complete
-        return new int[1];
+        int l = arr.length;
+        int[] copy = new int[l];
+        for(int y = 0; y < l; y++){
+            copy[y] = arr[y] + amount;
+        }
+        return copy;
     }
 }

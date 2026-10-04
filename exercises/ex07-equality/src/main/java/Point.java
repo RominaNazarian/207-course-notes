@@ -47,7 +47,10 @@ public class Point {
   @Override
   public String toString() {
     // TODO
-    return "";
+    String s_x = Integer.toString(x);
+    String s_y = Integer.toString(y);
+    return "(" + s_x + ", " + s_y + ")";
+    //return "(x, y)";
   }
 
   /**
@@ -60,6 +63,10 @@ public class Point {
   public boolean equals(Object o) {
     // TODO: check that o is a Point (use `instanceof`), cast it, and compare
     //       the x and y fields.
+    if(o instanceof Point){
+      Point second_p = (Point)o;
+      return this.x == second_p.x && this.y == second_p.y;
+    }
     return false;
   }
 
@@ -72,6 +79,6 @@ public class Point {
   @Override
   public int hashCode() {
     // TODO: Objects.hash(x, y) is an easy way to combine the fields.
-    return 0;
+    return Objects.hash(x, y);
   }
 }
