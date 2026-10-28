@@ -26,7 +26,7 @@ public class FirstLetters {
      */
     public static String firstLetters(String words) {
         StringBuilder sum_fw = new StringBuilder();
-        for( int l = 0; l < words.length() - 1; l++ ){
+        for( int l = 0; l < words.length(); l++ ){
             if( l==0 || words.charAt(l-1)==' '){
                 sum_fw.append(words.charAt(l));
             }

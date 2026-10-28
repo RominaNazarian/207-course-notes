@@ -20,7 +20,7 @@ public class Gotchas {
    * @return the current name
    */
   public String getName() {
-    return name;
+    return this.name;
   }
 
   /**
@@ -45,11 +45,11 @@ public class Gotchas {
   public static int[][] deepCopy(int[][] grid) {
     // TODO: build a new outer array and copy EACH inner array too, so that
     //       nothing is shared with `grid`.
-    ArrayList r = new ArrayList()
-    for(int i; i != grid.length; i++ ){
-      r.add(grid[i].clone());
+    int [][] gridCopy = grid.clone();
+    for(int i = 0; i != grid.length; i++){
+      gridCopy[i] = grid[i].clone();
     }
-    return grid.clone();
+    return gridCopy;
   }
 
   /**
@@ -64,6 +64,7 @@ public class Gotchas {
    */
   public static boolean sameValue(Integer a, Integer b) {
     // TODO: compare the VALUES, not the references.
-    return a == b;
+    int z = a;
+    return z == b;
   }
 }
